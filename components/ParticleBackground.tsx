@@ -1,46 +1,63 @@
-'use client';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { useRef } from 'react';
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef, useMemo } from "react";
 
 gsap.registerPlugin(useGSAP);
 
+// Reduce particle count for better performance
+const PARTICLE_COUNT = 50;
+
 const ParticleBackground = () => {
-    const particlesRef = useRef<HTMLDivElement[]>([]);
+  const particlesRef = useRef<HTMLDivElement[]>([]);
 
-    useGSAP(() => {
-        particlesRef.current.forEach((particle) => {
-            gsap.set(particle, {
-                width: Math.random() * 3 + 1,
-                height: Math.random() * 3 + 1,
-                opacity: Math.random(),
-                left: Math.random() * window.innerWidth,
-                top: Math.random() * (window.innerHeight + 1),
-            });
+  // Memoize particles array to prevent recreation
+  const particles = useMemo(() => Array(PARTICLE_COUNT).fill(null), []);
 
-            gsap.to(particle, {
-                y: window.innerHeight,
-                duration: Math.random() * 10 + 10,
-                opacity: 0,
-                repeat: -1,
-                ease: 'none',
-            });
-        });
-    }, []);
+  useGSAP(() => {
+    particlesRef.current.forEach((particle) => {
+      if (!particle) return;
 
-    return (
-        <div className="fixed inset-0 z-0 pointer-events-none">
-            {[...Array(100)].map((_, i) => (
-                <div
-                    key={i}
-                    ref={(el) => {
-                        if (el) particlesRef.current[i] = el;
-                    }}
-                    className="absolute rounded-full bg-white"
-                />
-            ))}
-        </div>
-    );
+      const randomWidth = Math.random() * 3 + 1;
+      const randomHeight = Math.random() * 3 + 1;
+      const randomLeftPos = Math.random() * 100;
+      const randomTopPos = Math.random() * 100;
+      const randomDuration = Math.random() * 10 + 15;
+      const randomOpacity = Math.random() * 0.5 + 0.2;
+
+      gsap.set(particle, {
+        width: randomWidth,
+        height: randomHeight,
+        opacity: randomOpacity,
+        left: `${randomLeftPos}%`,
+        top: `${randomTopPos}%`,
+        willChange: "transform, opacity",
+      });
+
+      gsap.to(particle, {
+        y: window.innerHeight,
+        opacity: 0,
+        duration: randomDuration,
+        repeat: -1,
+        ease: "none",
+      });
+    });
+  }, []);
+
+  return (
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      {particles.map((_, i) => (
+        <div
+          key={i}
+          ref={(el) => {
+            if (el) particlesRef.current[i] = el;
+          }}
+          className="absolute rounded-full bg-white"
+          aria-hidden="true"
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ParticleBackground;
