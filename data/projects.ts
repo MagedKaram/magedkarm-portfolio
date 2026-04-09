@@ -44,7 +44,7 @@ export const PROJECTS: IProject[] = [
       "Framer Motion",
       "next-intl",
     ],
-    thumbnail: "/projects/long/clinic.png",
+    thumbnail: "/projects/thumbnail/clinic.png",
     longThumbnail: "/projects/long/clinic.png",
     images: [
       "/projects/images/clinic-1.png",
@@ -105,7 +105,7 @@ export const PROJECTS: IProject[] = [
       "react-day-picker",
       "Lucide Icons",
     ],
-    thumbnail: "/projects/long/elitesync.png",
+    thumbnail: "/projects/thumbnail/elitesync.png",
     longThumbnail: "/projects/long/elitesync.png",
     images: [
       "/projects/images/elitesync.png",
@@ -162,12 +162,66 @@ export const PROJECTS: IProject[] = [
       "Metaobjects",
       "REST APIs",
     ],
-    thumbnail: "/projects/long/mood.png",
+    thumbnail: "/projects/thumbnail/mood.png",
     longThumbnail: "/projects/long/mood.png",
     images: [
       "/projects/images/mood-1.png",
       "/projects/images/mood-2.png",
       "/projects/images/mood-3.png",
+    ],
+  },
+  {
+    title: "Era of Legends",
+    slug: "era-of-legends",
+    liveUrl: "https://eraoflegends.vercel.app/",
+    year: 2025,
+    description: `
+    A bilingual marketing + onboarding SPA for a Lineage II High Five (Low Rate) server. <br/><br/>
+
+    Key Features:<br/>
+    <ul>
+      <li>🌐 Bilingual RTL/LTR Interface: Arabic/English toggle with persisted preference</li>
+      <li>⏳ Launch Countdown: live countdown to the official launch time</li>
+      <li>🎠 Features Showcase: auto-playing slider for server highlights (Low Rate / Auto-Farm / Clans / Events)</li>
+      <li>⚔️ Server Rates & Rules: clear breakdown (XP/SP, Adena, Drop/Spoil, Safe/Max Enchant, characters limit)</li>
+      <li>🧾 Register & Sign-in UI: client-side validation + ready onboarding flows</li>
+      <li>💬 Community CTA: Discord deep-link + community section</li>
+    </ul><br/>
+
+    Technical Highlights:
+    <ul>
+      <li>React 18 + TypeScript SPA built with Vite</li>
+      <li>Tailwind CSS dark fantasy theme + responsive layout</li>
+      <li>Express server serving the built SPA + lightweight API endpoints (/api/ping, /api/demo)</li>
+    </ul>
+  `,
+    role: `
+    Full-Stack (Frontend Focus) — Personal Project <br/>
+    <ul>
+      <li>✅ Built the full marketing website + onboarding pages using React Router</li>
+      <li>🌐 Implemented Arabic/English translations with RTL/LTR switching</li>
+      <li>🎨 Designed a consistent UI theme using Tailwind utilities and reusable section components</li>
+      <li>🧩 Added an Express layer to serve the SPA build and expose basic API routes</li>
+    </ul>
+  `,
+    techStack: [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Tailwind CSS",
+      "React Router",
+      "TanStack Query",
+      "Express",
+      "Node.js",
+      "Zod",
+    ],
+    thumbnail: "/projects/thumbnail/era.png",
+    longThumbnail: "/projects/long/era.png",
+    images: [
+      "/projects/images/era-1.png",
+      "/projects/images/era-2.png",
+      "/projects/images/era-3.png",
+      "/projects/images/era-4.png",
     ],
   },
   {
@@ -215,7 +269,7 @@ export const PROJECTS: IProject[] = [
       "react-spinners",
       "CSS",
     ],
-    thumbnail: "/projects/long/movie.png",
+    thumbnail: "/projects/thumbnail/movie.png",
     longThumbnail: "/projects/long/movie.png",
     images: ["/projects/images/movie.png", "/projects/images/movie-1.png"],
   },
