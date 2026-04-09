@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg\" -o supabase-test.svg)",
+      "Bash(mv:*)",
+      "Bash(sed -i 's/<svg /<svg fill=\"white\" /' axios.svg)",
+      "Bash(sed -i 's/<svg /<svg fill=\"white\" /' react-query.svg)"
+    ]
+  }
+}

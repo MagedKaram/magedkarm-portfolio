@@ -1,0 +1,21 @@
+import { PERSONAL_INFO } from '@/data/personal';
+import React from 'react';
+
+const StickyEmail = () => {
+    return (
+        <div className="max-xl:hidden fixed bottom-32 left-0 block">
+            <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="px-3 text-muted-foreground tracking-[1px] transition-all hover:text-foreground"
+                style={{
+                    textOrientation: 'mixed',
+                    writingMode: 'vertical-rl',
+                }}
+            >
+                {PERSONAL_INFO.email}
+            </a>
+        </div>
+    );
+};
+
+export default StickyEmail;

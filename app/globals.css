@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-background: hsl(0 0% 13%);
+  --color-background-light: hsl(0 0% 19%);
+  --color-foreground: hsl(0 0% 87%);
+  --color-primary: hsl(140 100% 47%);
+  --color-primary-foreground: hsl(0 0% 13%);
+  --color-secondary: hsl(193 100% 47%);
+  --color-secondary-foreground: hsl(0 0% 13%);
+  --color-muted: hsl(0 0% 14.9%);
+  --color-muted-foreground: hsl(0 0% 71%);
+  --color-border: hsl(0 0% 24%);
+  --color-input: hsl(0 0% 14.9%);
+  --color-ring: hsl(0 0% 83.1%);
+  --color-card: hsl(0 0% 3.9%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+
+
+  /* Screens */
+  --breakpoint-xs: 420px;
+}
+
+@theme inline {
+  --font-anton: var(--font-anton);
+  --font-roboto-flex: var(--font-roboto-flex);
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    border-color: hsl(0 0% 24%);
+    cursor: none !important;
+  }
+  body {
+    background-color: hsl(0 0% 13%);
+    color: hsl(0 0% 87%);
+    font-family: var(--font-roboto-flex), sans-serif;
+  }
+}
+
+@utility container {
+  max-width: 1148px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@utility py-section {
+  padding-top: 250px;
+  padding-bottom: 250px;
+}
+
+@utility pb-section {
+  padding-bottom: 250px;
+}
+
+@layer components {
+  .grid {
+    gap: 25px;
+  }
+  .markdown-text ul {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    list-style-type: disc;
+  }
+}
