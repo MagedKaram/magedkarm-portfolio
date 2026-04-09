@@ -274,6 +274,49 @@ export const PROJECTS: IProject[] = [
     images: ["/projects/images/movie.png", "/projects/images/movie-1.png"],
   },
   {
+    title: "Harri Shop",
+    slug: "haiie-shop",
+    liveUrl: "https://haiie-beryl.vercel.app/",
+    year: 2024,
+    description: `
+    A modern e-commerce web app for browsing products and placing orders with a smooth shopping experience. <br/><br/>
+
+    Key Features:<br/>
+    <ul>
+      <li>🛍️ Product Catalog & Details: Browse products and open item details pages</li>
+      <li>🔎 Filtering: Filter products for faster discovery</li>
+      <li>🔥 Best Sellers: Dedicated “Best Selling” section/tab for top products</li>
+      <li>🛒 Cart & Orders: Add to cart and review orders</li>
+      <li>🔐 Auth (Sign in) + Token: Persisted session using token-based authentication</li>
+    </ul><br/>
+
+    Technical Highlights:
+    <ul>
+      <li>Built with React + Redux for predictable client-side state</li>
+      <li>React Query used for server-state fetching, caching, and request syncing</li>
+      <li>Axios-based API layer connected to a real backend</li>
+    </ul>
+  `,
+    role: `
+    Frontend Developer — Personal Project <br/>
+    <ul>
+      <li>✅ Implemented core shopping flows (browse, filter, cart, orders)</li>
+      <li>🔐 Built sign-in flow and token persistence for protected actions</li>
+      <li>🔌 Integrated backend APIs using Axios + React Query</li>
+      <li>🧠 Managed UI and cart state with Redux for a consistent UX</li>
+    </ul>
+  `,
+    techStack: ["React", "Redux", "Axios", "React Query"],
+    thumbnail: "/projects/thumbnail/shop.png",
+    longThumbnail: "/projects/long/shop.png",
+    images: [
+      "/projects/images/shop-1.png",
+      "/projects/images/shop-2.png",
+      "/projects/images/shop-3.png",
+      "/projects/images/shop-4.png",
+    ],
+  },
+  {
     title: "Sawah",
     slug: "sawah",
     liveUrl: "https://sawah.vercel.app/",
